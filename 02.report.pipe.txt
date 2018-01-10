@@ -1,19 +1,10 @@
 tommy906@ubuntu:~$ ls|grep 'list'
 tommy906@ubuntu:~$ wc /etc/passwd
   40   71 2254 /etc/passwd
-tommy906@ubuntu:~$ free
-              total        used        free      shared  buff/cache   available
-Mem:         994868      712264       64408       24964      218196       73392
-Swap:       1046524      571756      474768
-tommy906@ubuntu:~$ cat /proc/cpuinfo
-...
-wp		: yes
-flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm fsgsbase tsc_adjust smep arat
-bugs		:
-bogomips	: 5802.00
-clflush size	: 64
-cache_alignment	: 64
-address sizes	: 43 bits physical, 48 bits virtual
-power management:
+tommy906@ubuntu:~$ free -h | grep Mem: | awk '{print $2}'
+971M
+tommy906@ubuntu:~$ cat /proc/cpuinfo | grep "core"
+core id		: 0
+cpu cores	: 1
 tommy906@ubuntu:~/Pictures$ find . -name "*.jpg"
 
