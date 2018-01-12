@@ -1,0 +1,24 @@
+tommy906@ubuntu:~$ ps
+   PID TTY          TIME CMD
+  4834 pts/4    00:00:00 bash
+  4861 pts/4    00:00:00 ps
+tommy906@ubuntu:~$ gnome-calculator
+tommy906@ubuntu:~$ ps aux | grep gnome-calculator
+tommy906   5566  2.4  3.3 645788 33428 pts/4    Sl+  21:47   0:00 gnome-calculator
+tommy906   5574  0.0  0.0  21292   976 pts/17   S+   21:47   0:00 grep --color=auto gnome-calculator
+tommy906@ubuntu:~$ cat /proc/5566/status
+...
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Cpus_allowed:	ffffffff,ffffffff,ffffffff,ffffffff
+Cpus_allowed_list:	0-127
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	45
+nonvoluntary_ctxt_switches:	467
+tommy906@ubuntu:~$ kill -STOP 5566
+tommy906@ubuntu:~$ kill -CONT 5566
+tommy906@ubuntu:~$ kill -KILL 5566
+
