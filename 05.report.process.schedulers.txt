@@ -1,23 +1,16 @@
-tommy906@ubuntu:~$ cat /proc/sched_debug | grep systemd
-         systemd     1       731.243357      2966   120         0.000000      2158.054232         0.000000 0 0 /autogroup-2
- systemd-journal   343       322.659305      1153   120         0.000000       324.154579         0.000000 0 0 /autogroup-3
-   systemd-udevd   371      2170.758560      2441   120         0.000000      1795.885657         0.000000 0 0 /autogroup-11
- systemd-timesyn   496        59.566997       166   120         0.000000        56.356390         0.000000 0 0 /autogroup-26
-  systemd-logind   828        66.263152       580   120         0.000000        67.453658         0.000000 0 0 /autogroup-32
+tommy906@ubuntu:~$ cat /proc/sched_debug | grep "systemd "
+         systemd     1       777.885525      3175   120         0.000000      2204.696400         0.000000 0 0 /autogroup-2
          systemd  1853        15.390809        32   120         0.000000        16.764865         0.000000 0 0 /autogroup-94
-tommy906@ubuntu:~$ cat /proc/sched_debug | grep systemd | awk '{print $4}'
-2967
-1153
-2441
-168
-580
+tommy906@ubuntu:~$ cat /proc/sched_debug | grep "systemd " | awk '{print $4}'
+3175
 32
 tommy906@ubuntu:~$ cat /proc/1/sched | grep switches
-nr_switches                                  :                 2976
-nr_voluntary_switches                        :                 1933
-nr_involuntary_switches                      :                 1043
+nr_switches                                  :                 3177
+nr_voluntary_switches                        :                 2125
+nr_involuntary_switches                      :                 1052
 tommy906@ubuntu:~$ cat /proc/1853/sched | grep switches
 nr_switches                                  :                   32
 nr_voluntary_switches                        :                   22
 nr_involuntary_switches                      :                   10
+
 
