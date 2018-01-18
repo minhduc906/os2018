@@ -33,8 +33,8 @@ item *consume() {
 }
 
 void display(){
-	printf("Value of first: %c %d %c\n",buffer[first].type,buffer[first].amount,buffer[first].unit);
-	printf("Value of last: %c %d %c\n",buffer[last].type,buffer[last].amount,buffer[last].unit);
+	printf("Value of first: %d\n",first);
+	printf("Value of last: %d\n",last);
 }
 
 int main(){
