@@ -1,32 +1,23 @@
 tommy906@ubuntu:~$ cat /proc/sched_debug | grep systemd
-         systemd     1       698.560377      2841   120         0.000000      2125.371252         0.000000 0 0 /autogroup-2
- systemd-journal   343       302.596120      1070   120         0.000000       304.091394         0.000000 0 0 /autogroup-3
-   systemd-udevd   371      2166.895115      2425   120         0.000000      1792.022212         0.000000 0 0 /autogroup-11
- systemd-timesyn   496        38.006037        99   120         0.000000        34.795430         0.000000 0 0 /autogroup-26
-  systemd-logind   828        61.011388       549   120         0.000000        62.201894         0.000000 0 0 /autogroup-32
+         systemd     1       731.243357      2966   120         0.000000      2158.054232         0.000000 0 0 /autogroup-2
+ systemd-journal   343       322.659305      1153   120         0.000000       324.154579         0.000000 0 0 /autogroup-3
+   systemd-udevd   371      2170.758560      2441   120         0.000000      1795.885657         0.000000 0 0 /autogroup-11
+ systemd-timesyn   496        59.566997       166   120         0.000000        56.356390         0.000000 0 0 /autogroup-26
+  systemd-logind   828        66.263152       580   120         0.000000        67.453658         0.000000 0 0 /autogroup-32
          systemd  1853        15.390809        32   120         0.000000        16.764865         0.000000 0 0 /autogroup-94
-tommy906@ubuntu:~$ cat /proc/1853/sched
-systemd (1853, #threads: 1)
-...
-policy                                       :                    0
-prio                                         :                  120
-clock-delta                                  :                   28
-mm->numa_scan_seq                            :                    0
-numa_pages_migrated                          :                    0
-numa_preferred_nid                           :                   -1
-total_numa_faults                            :                    0
-current_node=0, numa_group_id=0
-numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0
-tommy906@ubuntu:~$ cat /proc/1/sched
-systemd (1, #threads: 1)
-...
-policy                                       :                    0
-prio                                         :                  120
-clock-delta                                  :                   26
-mm->numa_scan_seq                            :                    0
-numa_pages_migrated                          :                    0
-numa_preferred_nid                           :                   -1
-total_numa_faults                            :                    0
-current_node=0, numa_group_id=0
-numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0
+tommy906@ubuntu:~$ cat /proc/sched_debug | grep systemd | awk '{print $4}'
+2967
+1153
+2441
+168
+580
+32
+tommy906@ubuntu:~$ cat /proc/1/sched | grep switches
+nr_switches                                  :                 2976
+nr_voluntary_switches                        :                 1933
+nr_involuntary_switches                      :                 1043
+tommy906@ubuntu:~$ cat /proc/1853/sched | grep switches
+nr_switches                                  :                   32
+nr_voluntary_switches                        :                   22
+nr_involuntary_switches                      :                   10
 
