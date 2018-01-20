@@ -1,0 +1,7 @@
+tommy906@ubuntu:~$ ps -aux | grep firefox
+tommy906   2989 12.8 17.4 2156672 173268 ?      Sl   09:37   0:37 /usr/lib/firefox/firefox
+tommy906   3745  0.0  0.0  21292   888 pts/4    S+   09:41   0:00 grep --color=auto firefox
+tommy906@ubuntu:~$ ps -o nlwp 2989
+NLWP
+  43
+
